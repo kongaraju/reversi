@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+	<!--<![endif]-->
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<title>Reversi game</title>
+		<meta name="description" content="Play Reversi game online with your friends.">
+		<meta name="viewport" content="width=device-width">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<!--<meta http-equiv="Cache-control" content="no-cache">-->
+
+		<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+		<link rel="stylesheet" href="css/normalize.css">
+		<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/bootstrap-responsive.min.css">
+
+		<link rel="stylesheet" href="css/main.css">
+		<script src="js/vendor/modernizr-2.6.2.min.js"></script>
+	</head>
+	<body>
+		<!--[if lt IE 7]>
+		<p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+		<![endif]-->
+
+		<!-- Add your site or application content here
+		<p>Hello world! This is HTML5 Boilerplate.</p>-->
+
+		<!-- end of authentication system -->
+
+		<p class="power">
+			Powered by <a href="http://www.antkorp.in" target="_blank">antkorp</a>
+		</p>
+
+		<div class="app">
+
+			<header class="header navbar navbar-fixed-top navbar-inverse">
+				<div class="navbar-inner">
+					<div class="container-fluid">
+						<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </a>
+						<a class="brand title" href="#">Reversi</a>
+						<!--<ul class="nav">
+						<li class="active">
+						<a href="#">Boards</a>
+						</li>
+						<li>
+						<a href="#">Game</a>
+						</li>
+						</ul>-->
+						<div class="nav-collapse collapse">
+							<ul class="nav pull-right">
+								<li class="widgets">
+									<a href="https://twitter.com/share" class="twitter-share-button" data-via="twitterapi" data-lang="en">Tweet</a>
+									<script>
+										! function(d, s, id) {
+											var js, fjs = d.getElementsByTagName(s)[0];
+											if (!d.getElementById(id)) {
+												js = d.createElement(s);
+												js.id = id;
+												js.src = "https://platform.twitter.com/widgets.js";
+												fjs.parentNode.insertBefore(js, fjs);
+											}
+										}(document, "script", "twitter-wjs");
+									</script>
+								</li>
+								<li class="widgets">
+									<div class="fb-like" data-href="http://www.onlinereversi.com" data-send="false" data-layout="button_count" data-width="450" data-show-faces="true" data-font="tahoma"></div>
+								</li>
+								<li class="widgets">
+								<div class="fb-send" data-href="http://www.onlinereversi.com"></div>
+								</li>
+								
+								<li class="widgets">
+									<div class="g-plusone"></div>
+								</li>
+								<li class="divider-vertical"></li>
+								<li class="">
+									<img id="me-pic"/><span id="me-name"></span>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</header>
+
+			<div class="content">
+				<section class="game">
+					<div class="board">
+						<table class="board-table">
+							<tr>
+								<td id="pos0"></td>
+								<td id="pos1"></td>
+								<td id="pos2"><div class="bcoin"></div></td>
+								<td id="pos3"><div class="bcoin"></div></td>
+								<td id="pos4"><div class="bcoin"></div></td>
+								<td id="pos5"><div class="bcoin"></div></td>
+								<td id="pos6"><div class="bcoin"></div></td>
+								<td id="pos7"></td>
+
+							</tr>
+							<tr>
+								<td id="pos8"></td>
+								<td id="pos9"></td>
+								<td id="pos10"></td>
+								<td id="pos11"></td>
+								<td id="pos12"></td>
+								<td id="pos13"></td>
+								<td id="pos14"></td>
+								<td id="pos15"></td>
+
+							</tr>
+							<tr>
+								<td id="pos16"></td>
+								<td id="pos17"></td>
+								<td id="pos18"></td>
+								<td id="pos19"></td>
+								<td id="pos20"></td>
+								<td id="pos21"></td>
+								<td id="pos22"></td>
+								<td id="pos23"></td>
+
+							</tr>
+							<tr>
+								<td id="pos24"></td>
+								<td id="pos25"></td>
+								<td id="pos26"></td>
+								<td id="pos27"></td>
+								<td id="pos28"></td>
+								<td id="pos29"></td>
+								<td id="pos30"></td>
+								<td id="pos31"></td>
+
+							</tr>
+							<tr>
+								<td id="pos32"></td>
+								<td id="pos33"></td>
+								<td id="pos34"></td>
+								<td id="pos35"></td>
+								<td id="pos36"></td>
+								<td id="pos37"></td>
+								<td id="pos38"></td>
+								<td id="pos39"></td>
+
+							</tr>
+							<tr>
+								<td id="pos40"></td>
+								<td id="pos41"></td>
+								<td id="pos42"></td>
+								<td id="pos43"></td>
+								<td id="pos44"></td>
+								<td id="pos45"></td>
+								<td id="pos46"></td>
+								<td id="pos47"></td>
+
+							</tr>
+							<tr>
+								<td id="pos48"></td>
+								<td id="pos49"></td>
+								<td id="pos50"></td>
+								<td id="pos51"></td>
+								<td id="pos52"></td>
+								<td id="pos53"></td>
+								<td id="pos54"></td>
+								<td id="pos55"></td>
+
+							</tr>
+							<tr>
+								<td id="pos56"></td>
+								<td id="pos57"></td>
+								<td id="pos58"></td>
+								<td id="pos59"></td>
+								<td id="pos60"></td>
+								<td id="pos61"></td>
+								<td id="pos62"></td>
+								<td id="pos63"></td>
+							</tr>
+						</table>
+
+					</div>
+					<aside class="actions">
+						<div class="startbtn">
+							<button id="start" class="btn btn-large btn-success">
+								Start
+							</button>
+							<button id="shareApp" class="btn btn-danger">
+								Invite your friends
+							</button>
+							<button id="leave" class="btn btn-primary">
+								Leave Board
+							</button>
+
+						</div>
+						<div class="counter">
+							<p class="countDown">
+								You have to select a position in <span id="timer"></span>
+							</p>
+						</div>
+						<div class="players">
+							<div class="pawns player1_set " id="player1">
+								<img id="player1_pic" class="pyr_pic"/><span class="count white"></span>
+							</div>
+							<div class="pawns player2_set " id="player2">
+								<img id="player2_pic" class="pyr_pic"/><span class="count black"></span>
+							</div>
+
+						</div>
+						<div id="log"></div>
+					</aside>
+				</section>
+				<section class="help">
+
+					<div class="descript">
+
+						<h2>Reversi</h2>
+						<p>
+							Play reversi or othello game online with your facebook friends.
+							<br/>
+							Don't know how to play?
+							<br/>
+
+							<a href="http://en.wikipedia.org/wiki/Reversi"  target="_blank">Find out here.</a>&nbsp;&nbsp;&nbsp;
+						</p>
+
+						Leave your feedback.
+
+						<p>
+							Supported Browsers.
+							<ul>
+								<li class="br-icon chrome"></li>
+								<li class="br-icon firefox"></li>
+								<li class="br-icon opera"></li>
+								</ul>
+							
+							
+						</p>
+<br/>
+						<!--<small>image from wikimedia commons</small>-->
+					</div>
+					<div class="open_side">
+						<div class="auth-system">
+							
+							
+
+						</div>
+						<div class="navBoards">
+							<div class="navboards-btnpart">
+								<button class="btn btn-success btn-large" id="goBoards">
+									Play Reversi
+								</button>
+							</div>
+
+						</div>
+						<div class="fcomments">
+							<div class="fb-comments" data-href="http://www.onlinereversi.com" data-width="500" data-num-posts="10"></div>
+						</div>
+					</div>
+				</section>
+				<section class="available-boards">
+
+					<div class="board-options">
+						<!--<div class="input-append">
+						<input class="span2" id="query" type="text">
+						<button class="btn btn-success" type="button">
+						Search
+						</button>
+						</div>
+						or-->
+						<button class="newBoard btn btn-primary">
+							Create New Board
+						</button>
+					</div>
+					<div class="leaders-list">
+						<h4 class="heading">Leader Board(Top 10)</h4>
+						<ul></ul>
+
+					</div>
+					<div class="players-list">
+						<h4 class="heading">Players Online</h4>
+						<ul></ul>
+
+					</div>
+
+					<h4 class="heading">Boards</h4>
+					<div class="boards-list">
+
+					</div>
+
+				</section>
+				<section class="gameEnd">
+
+					<p class="well well-large won text-succes">
+						<img src="img/smily_won.png"/>
+						Congratulations! you won the game.
+					</p>
+
+					<p class="well well-large lost text-info">
+						<img src="img/smily_lost.png"/>
+						Sorry! you just lost the game.
+						please try again..
+					</p>
+					<button class="btn btn-danger" id="pagain">
+						PLay again
+					</button>
+
+				</section>
+			</div>
+		</div><!-- end of app content -->
+
+		<a href="#myModal" role="button" class="btn btn-primary" data-toggle="modal" id="feedback_btn">Feedback</a>
+
+		<!-- Modal -->
+		<div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+					×
+				</button>
+				<h3 id="myModalLabel">Feedback</h3>
+			</div>
+
+			<div class="modal-body">
+				<textarea rows=10 cols=20  id="feedback"></textarea>				
+					
+    
+
+
+			</div>
+			<div class="modal-footer">
+				<button class="btn" data-dismiss="modal" aria-hidden="true">
+					Close
+				</button>
+				<button class="btn btn-primary" data-dismiss="modal" id="post_fk">
+					Send
+				</button>
+			</div>
+
+		</div>
+
+		<!--<footer>
+		<p>
+		&#169;antkorp
+		</p>
+		</footer>-->
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+
+		<script src="js/bootstrap.min.js" ></script>
+		<script>
+			window.jQuery || document.write('<script src="js/vendor/jquery-1.9.0.min.js"><\/script>')
+		</script>
+		<script src="js/plugins.js"></script>
+		<script src="js/main.js"></script>
+
+		<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+		<script type="text/javascript">
+			var _gaq = _gaq || [];
+			_gaq.push(['_setAccount', 'UA-38691422-1']);
+			_gaq.push(['_trackPageview']);
+
+			(function() {
+				var ga = document.createElement('script');
+				ga.type = 'text/javascript';
+				ga.async = true;
+				ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+				var s = document.getElementsByTagName('script')[0];
+				s.parentNode.insertBefore(ga, s);
+			})();
+
+		</script>
+	</body>
+</html>

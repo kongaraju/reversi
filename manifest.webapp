@@ -1,0 +1,13 @@
+{
+  "name": "Reversi",
+  "description": "Two player game from antkorp. Play reversi online with your friends.",
+  "launch_path": "/",
+  "icons": {
+    "128": "/img/128_reversi.png"
+  },
+  "developer": {
+    "name": "antkorp",
+    "url": "http://www.antkorp.in"
+  },
+  "default_locale": "en"
+}
